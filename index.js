@@ -14,7 +14,7 @@ app.use(bodyParser.json());
 app.use(express.static('public'));
 
 // Initialize Google Generative AI with API key
-const genAI = new GoogleGenerativeAI( "AIzaSyCimOu6x7qImWD1DMd6JKzp8rlsnwU5xuE");
+const genAI = new GoogleGenerativeAI( process.env.API_SECRET_KEY);
 
 // Specify the model you want to use
 const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
