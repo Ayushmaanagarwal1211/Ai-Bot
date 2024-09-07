@@ -1,6 +1,21 @@
 // Access the user input element
 const userInput = document.getElementById('user-input');
+const loader = document.getElementById('loader');
+const loader1 = document.getElementById('loader1');
 
+// Function to show the loader
+function showLoader() {
+  loader.style.display = 'block';
+  loader1.style.display = 'block';
+
+}
+
+// Function to hide the loader
+function hideLoader() {
+  loader.style.display = 'none';
+  loader1.style.display = 'none';
+
+}
 // Adjust the height of the input area based on its content
 userInput.addEventListener('input', function () {
   this.style.height = 'auto';
@@ -52,6 +67,7 @@ async function sendMessage() {
 
   try {
     console.log('sdsd')
+    showLoader()
     // Send the message to the server and await the response
     const response = await fetch('https://ai-bot-xd2x.onrender.com/api/chat', {
       method: 'POST',
@@ -64,6 +80,7 @@ async function sendMessage() {
     // Log the response data for debugging and append the bot's message to the chat
     console.log(data);
     appendMessage('chatbot', data.reply);
+    hideLoader()
     // Update conversation history with the assistant's reply
     conversationHistory.push({ role: 'assistant', content: data.reply });
 
