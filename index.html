@@ -9,6 +9,13 @@
       #loader1{
         display: none;
       }
+      body{
+        
+      }
+      h1{
+        margin: auto;
+        text-align: center;
+      }
       /* Add basic styles for the loader */
       .loader {
         border: 16px solid #f3f3f3;
@@ -38,12 +45,12 @@
     </style>
   </head>
   <body>
-    <h1>ChatGPT Clone</h1>
-    <div id="chat-container">
+    <h1>AI Verse</h1>
+    <div id="chat-container" style="margin: auto;">
       <div id="loader1" style="top: 0px;left: 0px; position: fixed;height: 100vh;width: 100vw;background-color: rgba(0, 0, 0, 0.1);"> </div>
       <div id="loader" class="loader"></div>
     </div>
-    <div class="input-container">
+    <div class="input-container" style="margin: auto;position: relative;left: -10px;">
       <textarea
         id="user-input"
         placeholder="Type your message..."
